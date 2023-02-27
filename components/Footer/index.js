@@ -30,10 +30,14 @@ import { BiMobile } from 'react-icons/bi';
 import { CgMail } from 'react-icons/cg';
 import Image from 'next/image';
 import Link from 'next/link';
+import OtpModal from '../Modal/OtpModal';
 
 export const config = { amp: 'hybrid' };
 
 function Footer() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const router = useRouter();
   const cart = useSelector((state) => state.cardAdd?.cart);
   const [total, setTotal] = React.useState(0);
@@ -577,7 +581,8 @@ function Footer() {
                   if (minAmount > total) {
                     toast.error('Add more items to checkout');
                   } else if (!localStorage.getItem('gluserDetails')) {
-                    router.push('/login');
+                    // router.push('/login');
+                    handleShow();
                   } else {
                     router.push('/checkout');
                   }
@@ -597,6 +602,13 @@ function Footer() {
         </div>
       ) : (
         ''
+      )}
+      {show && (
+        <OtpModal
+          show={show}
+          handleShow={handleShow}
+          handleClose={handleClose}
+        />
       )}
     </>
   );

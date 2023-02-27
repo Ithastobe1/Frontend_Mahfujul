@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alike&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 
 html,
 body {
-  font-family: "Inter", sans-serif, Arial, Helvetica;
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
   overflow-x: hidden;
   margin: 0;
   box-sizing: border-box;
@@ -213,7 +213,7 @@ button {
 }
 
 .mid-2 h1 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
 }
 
@@ -285,7 +285,7 @@ button {
 
 .salonehome-all-Category .salone-all-category-text {
   margin-top: 10px !important;
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -364,7 +364,7 @@ button {
 }
 
 .timeSlot-all .inside-title {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -401,7 +401,7 @@ button {
 }
 
 .checkout-all .section-address .inside-title {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -438,10 +438,20 @@ button {
 .modbox .modal-content {
   background-color: #fff !important;
 }
+.otpModal .modal {
+  width: 1rem !important;
+  height: 1rem;
+}
+.section-model-login {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  max-width: 32rem;
+  overflow: hidden;
+}
 
 .list_location:before {
   background: url(https://assets.fastexpert.com/images/topagent_location.svg);
-  content: " ";
+  content: ' ';
   display: inline-block;
   height: 19px;
   left: 10px;
@@ -478,7 +488,7 @@ button {
 }
 
 .address-all .section-address .inside-title-new {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -510,14 +520,14 @@ button {
 
 .checkout-all .font-family-alata,
 .font-family-alata-22 {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   color: #000;
 }
 
 .checkout-all .material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
+  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -528,13 +538,13 @@ button {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -moz-font-feature-settings: "liga";
+  -moz-font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;
 }
 
 .checkout-all .font-family-alata,
 .font-family-alata-22 {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   color: #000;
@@ -570,7 +580,7 @@ button {
   text-align: right;
   margin-top: 5.5%;
   background: #a253f0;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -582,7 +592,7 @@ button {
 }
 
 .checkout-all .timeSlot-all .inside-title {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -625,7 +635,7 @@ button {
   padding: 5px;
   background: #8e6cea;
   border-radius: 50px;
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -677,7 +687,7 @@ button {
 }
 
 .timeslots-texts {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -971,7 +981,7 @@ a:hover {
 }
 
 .side-menu-box .side-text {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -1010,7 +1020,7 @@ a:hover {
 
 .header-css-head .inside-text-head {
   width: 100%;
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-size: 33px;
@@ -1037,7 +1047,7 @@ a:hover {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.324);
 }
 .servicesMD .Price {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -1050,7 +1060,7 @@ a:hover {
 
 .servicesMD .offerPrice,
 .servicesMD .ratting {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   align-items: center;
@@ -1095,7 +1105,7 @@ a:hover {
   text-align: right;
   background: #a854fc;
   border-radius: 10px;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -1111,7 +1121,7 @@ a:hover {
 .servicesMD .viewDetails,
 .servicesMD .viewDetails-m {
   border-radius: 10px;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   /* border: 1px solid #dedede; */
@@ -1295,7 +1305,7 @@ a:hover {
 }
 
 .listService {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -1310,7 +1320,7 @@ a:hover {
 } */
 
 .servicesMD .time-settings {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1324,7 +1334,7 @@ a:hover {
   background: rgba(0, 0, 0, 0.97);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1432,19 +1442,25 @@ a:hover {
   border-bottom-right-radius: 50%;
   background: rgba(255, 250, 207, 0.79);
   box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  position: relative;
 }
 
 .section-model-login .headsecftion .imagelogo,
 .section-model-login .headsecftion .ptext {
   display: block;
   width: 50%;
-  padding-top: 20%;
+  padding-top: 15%;
   margin-left: auto;
   margin-right: auto;
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
-
+.section-model-login .headsecftion .imagelogo {
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .section-model-login .bottomsecftion {
   width: 100%;
   height: 60vh;
@@ -1519,7 +1535,7 @@ a:hover {
 }
 
 .bottomservicesCheckout .topinside .text {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -1540,7 +1556,7 @@ a:hover {
 
 .bottomservicesCheckout .bottominside .textbot,
 .bottomservicesCheckout .bottominside .textHead {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   display: flex;
@@ -1606,7 +1622,7 @@ a:hover {
 }
 
 #confirmation .checkout-all .thankstitle {
-  font-family: "Monotype Corsiva";
+  font-family: 'Monotype Corsiva';
   font-style: italic;
   font-weight: 400;
   font-size: 44px;
@@ -1625,12 +1641,12 @@ a:hover {
 }
 
 #confirmation .checkout-all .thankssubtitle {
-  font-family: "Alegreya Sans SC";
+  font-family: 'Alegreya Sans SC';
   font-size: 25px;
 }
 
 #confirmation .checkout-all .thanksinside {
-  font-family: "Alike";
+  font-family: 'Alike';
   font-size: 18px;
   padding-top: 0.5rem;
 }
@@ -1644,7 +1660,7 @@ a:hover {
 }
 
 #confirmation .checkout-all .hrading-section .subtitle-all {
-  font-family: "Alike";
+  font-family: 'Alike';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -1657,7 +1673,7 @@ a:hover {
 }
 
 #confirmation .checkout-all .hrading-section .inside-section-bg .thinsidetext {
-  font-family: "Alike";
+  font-family: 'Alike';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -1779,7 +1795,7 @@ a:hover {
 }
 
 #blogs .post-title {
-  font-family: "Alike";
+  font-family: 'Alike';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1851,7 +1867,7 @@ a:hover {
 }
 
 .coupon-modal .modal-content .title {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -1861,7 +1877,7 @@ a:hover {
 }
 
 .coupon-modal .modal-content .disacount-amount {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -1876,7 +1892,7 @@ a:hover {
 }
 
 .coupon-modal .modal-content .save-amount {
-  font-family: "Aoboshi One";
+  font-family: 'Aoboshi One';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -1887,7 +1903,7 @@ a:hover {
 }
 
 .coupon-modal .modal-content .t-and-c {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1901,7 +1917,7 @@ a:hover {
 }
 
 .coupon-modal .modal-content .apply-btn {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -1944,7 +1960,7 @@ button:disabled {
 
 .about-desc {
   font-size: 14pt;
-  font-family: "Alata";
+  font-family: 'Alata';
   color: #5f5f5f;
   margin-bottom: 40px;
 }
@@ -1965,7 +1981,7 @@ button:disabled {
 .loc-title {
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   color: #5f5f5f;
-  font-family: "Alata";
+  font-family: 'Alata';
 }
 
 .team-member {
@@ -1988,7 +2004,7 @@ button:disabled {
 
 .terms-conditions {
   font-size: 14pt;
-  font-family: "Alata";
+  font-family: 'Alata';
   color: #000;
   list-style: decimal;
 }
@@ -2287,7 +2303,7 @@ button:disabled {
   }
 
   .allsection {
-    margin-top: "0px";
+    margin-top: '0px';
   }
 
   .modal-fullscreen {
@@ -2307,6 +2323,11 @@ button:disabled {
   .modal-lg,
   .modal-xl {
     --bs-modal-width: 547px !important;
+  }
+}
+@media (max-width: 576px) {
+  .section-model-login .headsecftion .imagelogo {
+    top: -5%;
   }
 }
 @media (min-width: 676px) and (max-width: 1065px) {
@@ -2586,7 +2607,7 @@ button:disabled {
 }
 
 .service-m-title {
-  font-family: "Alike";
+  font-family: 'Alike';
   font-weight: 400;
   color: #000000;
   font-size: 19px;
@@ -2597,7 +2618,7 @@ button:disabled {
   background: rgba(0, 0, 0, 0.97);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
-  font-family: "Alata";
+  font-family: 'Alata';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
