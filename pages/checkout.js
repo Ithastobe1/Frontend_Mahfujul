@@ -303,7 +303,7 @@ function Checkout() {
             </div>
           </div>
           <div className="timeSlot-all">
-            <p className="inside-title">Prime Time Slots</p>
+            <p className="inside-title mx-3">Prime Time Slots</p>
             {active === 0 && h > 17 && <p className="">No slots available</p>}
 
             <div className="row-m-check">
@@ -314,7 +314,7 @@ function Checkout() {
                 if (item.isavailable) {
                   return (
                     <div
-                      className="col-6-m-check time-slots"
+                      className="col-6-m-check time-slots m-1"
                       key={index}
                       onClick={() => {
                         setIsselected(index);

@@ -236,21 +236,20 @@ export default function Categoryslug() {
                       <Row style={{ marginTop: '1rem' }}>
                         {x?.service.map((y, i) => (
                           <>
-                            {false ? (
+                            {localStorage.getItem('devise') === 'M' ? (
                               <div
                                 className="col-md-6 col-12 p-md-5 pt-md-3 pb-md-0 p-2"
                                 key={i}
                               >
                                 <div className="servicesMD row servicesMD-bg-color-1">
-                                  <a className="col-4 p-0" href="#">
+                                  <a className="col-5 p-0" href="#">
                                     <img
                                       className="image"
                                       src={y.service_image_url}
                                       alt={y.name}
-                                      height="183px"
                                     />
                                   </a>
-                                  <div className="col-8 position-relative pt-2">
+                                  <div className="col-7 position-relative pt-2">
                                     <div className="d-flex align-items-center justify-content-between">
                                       <a href="#" className="service-title">
                                         {y.name}
@@ -328,8 +327,8 @@ export default function Categoryslug() {
                                         <li className="list-group-item">
                                           <img
                                             src={clock.src}
-                                            width={20}
-                                            height={20}
+                                            width={15}
+                                            height={15}
                                             className="me-2"
                                             alt=""
                                           />
@@ -338,7 +337,7 @@ export default function Categoryslug() {
                                       </div>
                                       <div className="lineDiv" />
                                     </div>
-                                    <div className="d-flex justify-content-between align-items-end descriptionServices descriptionService-m mt-2">
+                                    <div className="d-flex justify-content-between align-items-end descriptionServices descriptionService-m">
                                       <ul className="p-0 pt-2 m-0 mt-2 line">
                                         {mapItems(
                                           y.description

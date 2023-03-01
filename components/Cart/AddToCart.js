@@ -36,7 +36,7 @@ export default function AddToCart({ data }) {
           </div>
         ) : (
           <div
-            className="Addtocart ms-4 rounded-pill"
+            className="Addtocart ms-md-4 rounded-pill"
             onClick={() => onIncrement(data)}
           >
             Add

@@ -36,16 +36,16 @@ function OtpModal({ show, handleShow, handleClose }) {
           setMainotp(true);
           reset();
           setDataMb(res.mb);
-          toast.success(res.message, {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-          });
+          // toast.success(res.message, {
+          //   position: 'top-right',
+          //   autoClose: 5000,
+          //   hideProgressBar: false,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          //   progress: undefined,
+          //   theme: 'light',
+          // });
         } else if (res.status == 'fail') {
           toast.warning(res.message, {
             position: 'bottom-center',
@@ -102,16 +102,16 @@ function OtpModal({ show, handleShow, handleClose }) {
             dispatch(userData(res.user));
 
             reset();
-            toast.success(res.message, {
-              position: 'top-left',
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: 'light',
-            });
+            // toast.success(res.message, {
+            //   position: 'top-left',
+            //   autoClose: 5000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   progress: undefined,
+            //   theme: 'light',
+            // });
 
             localStorage.getItem('page')
               ? Router.push('/checkout')

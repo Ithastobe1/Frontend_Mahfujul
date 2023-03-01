@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -40,47 +39,6 @@ export default function Blogs() {
             </Link>
           </div>
           {/* <div className="col-lg-5 social">
-=======
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import LoadingScreen from "../components/LoadingScreen/loadingScreen";
-import Global from "../_helpers/global";
-import { frontService } from "../_services/front.services";
-import blogLogo from '../assets/img/blog-logo.png'
-
-export default function Blogs() {
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        frontService.blogs()
-            .then(
-                res => {
-                    if (res.status === 'success') {
-                        setItems(res.blogs);
-                        setLoading(false)
-                    } else {
-                        console.log('Something went wrong !!');
-                        setLoading(false)
-                    }
-                },
-                error => {
-                    console.log('Something went wrong !!');
-                    setLoading(false)
-                }
-            )
-    }, []);
-
-    return (<section id="blogs">
-        <Container fluid>
-            <div className="row">
-                <div className="col-lg-12 text-center">
-                    <Link href="/"><img src={blogLogo.src} className="w-auto banner-img" /></Link>
-                </div>
-                {/* <div className="col-lg-5 social">
->>>>>>> aa7d274eb775c025d7d8c59d2882522cb6fadf89
                     <div className="">
                         <ul>
                             <li><a>
@@ -109,12 +67,61 @@ export default function Blogs() {
                         </ul>
                     </div>
                 </div> */}
-<<<<<<< HEAD
         </div>
         {loading ? (
           <LoadingScreen />
         ) : items.length > 0 ? (
           <div className="row">
+            {items ? (
+              <>
+                <div className="g-3 g-sm-6 gap-2 categories-top-header">
+                  {items?.map((x, i) => (
+                    <>
+                      {console.log(items)}
+                      <a
+                        spy={true}
+                        // smooth={true}
+                        activeClass="product-category-item-selected text-white"
+                        id="cat210"
+                        to={`${x.category_name}`}
+                        className="product-category-item cat210 mt-0"
+                        style={{
+                          backgroundColor: 'rgb(255, 255, 255)',
+                          padding: '12px 8px',
+                        }}
+                        key={i}
+                      >
+                        <h3
+                          className="fontFamily-alata-only"
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 500,
+                            textAlign: 'center',
+                            marginBottom: 0,
+                            position: 'relative',
+                            marginTop: 0,
+                          }}
+                        >
+                          {x.category_name}
+                        </h3>
+                      </a>
+                    </>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <Audio
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="green"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </>
+            )}
             <div className="col-lg-8 blog-container">
               <div className="row blogs">
                 {items.map((e) => {
@@ -164,41 +171,3 @@ export default function Blogs() {
     </section>
   );
 }
-=======
-            </div>
-            {loading ? <LoadingScreen /> : (items.length > 0 ? <div className="row">
-                <div className="col-lg-8 blog-container">
-                    <div className="row blogs">
-                        {items.map((e) => {
-                            return <Link href={"/blog/" + e.ID} className="blog-item" key={e.ID}>
-                                <img src={e.image_url} />
-                                <p className="post-title">{e.post_title}</p>
-                            </Link>
-                        })}
-                    </div>
-                </div>
-                <div className="col-lg-4 recent-posts-container">
-                    <div className="recent-post-card">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="title-box">
-                                    Recent Post
-                                </div>
-                            </div>
-                            <div className="col-lg-12 recent-posts">
-                                {items.map((e) => {
-                                    return <Link key={e.ID} className="d-flex recent-post" href={"/blog/" + e.ID}>
-                                        <div className="img-box"><img src={e.image_url} /></div>
-                                        <div className="post-title">{e.post_title}</div>
-                                    </Link>
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> : <div className="text-center">No Blogs</div>)}
-        </Container>
-    </section>
-    )
-}
->>>>>>> aa7d274eb775c025d7d8c59d2882522cb6fadf89

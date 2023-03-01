@@ -19,6 +19,7 @@ import coupon_icon from '../assets/img/coupon_icon.svg';
 import upi_icon from '../assets/img/upi_icon.svg';
 import celebration from '../assets/img/celebration.svg';
 import AddressAndUserDetail from '../components/AddressAndUserDetail';
+import PreferredPackages from '../components/PreferredPackages';
 
 function Payment() {
   const Razorpay = useRazorpay();
@@ -294,7 +295,7 @@ function Payment() {
                               </div>
                               <ViewDetails
                                 alldata={item}
-                                className="w-25 m-0"
+                                className="w-auto m-0"
                               />
                             </div>
                             <div className="descriptionServices d-flex justify-content-between align-items-center mt-3">
@@ -349,6 +350,7 @@ function Payment() {
                   ))}
                 </div>
                 <h4 className="my-3 d-none d-md-block">Frequently Added</h4>
+                {/* <PreferredPackages /> */}
                 <div className="d-none d-md-flex row">
                   <div className="freq-wrapper col-6 col-md-3 mb-3 mb-md-0">
                     <img src={addon_img.src} width="100%" />
