@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Card2 from "./Card2";
+import React, { Fragment } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Card2 from './Card2';
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 function CustomNextArrow(props) {
   const { className, onClick } = props;
   return <div className={`${className} bg-white`} onClick={onClick}></div>;
@@ -51,7 +52,7 @@ const Index = () => {
         <div className="title-content text-center my-5">
           <h2
             className="title font-familt-jost"
-            style={{ width: "100%", textAlign: "center" }}
+            style={{ width: '100%', textAlign: 'center' }}
           >
             Customer Testimonials
           </h2>

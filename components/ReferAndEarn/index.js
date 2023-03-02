@@ -3,6 +3,7 @@ import { Card, Container } from 'react-bootstrap';
 import Slider from 'react-slick';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import girl from '../../assets/img/girl.jpg';
 // import Image from 'next/image';
 
 function CustomNextArrow(props) {
@@ -54,7 +55,7 @@ const ReferAndEarn = () => {
           <Card className="border-0 rounded-3 px-2 card refer-earn-img relative">
             <Link href="/">
               <img
-                src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp"
+                src={girl.src}
                 width="100%"
                 height="100%"
                 className="rounded-3"

@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import girl from '../../assets/img/girl.jpg';
 
 function CustomNextArrow(props) {
   const { className, onClick } = props;
@@ -118,7 +119,7 @@ const PreferredPackages = () => {
                 src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp" />
             </a> */}
               <img
-                src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp"
+                src={girl.src}
                 width={238}
                 height={200}
                 style={{

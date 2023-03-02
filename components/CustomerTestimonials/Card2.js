@@ -10,6 +10,7 @@ import {
 } from 'mdb-react-ui-kit';
 import { AiFillStar } from 'react-icons/ai';
 import { Image } from 'react-bootstrap';
+import girl from '../../assets/img/girl.jpg';
 
 export default function App() {
   return (
@@ -27,8 +28,8 @@ export const InnerCard = () => {
       <MDBCard>
         <MDBCardBody className="py-2 card2-csss">
           <div className="d-flex justify-content-center img-css">
-            <img
-              src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp"
+            <Image
+              src={girl.src}
               className="rounded-circle shadow-1-strong bg-white p-2"
               width={100}
               height={100}
