@@ -1,11 +1,11 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { frontService } from "../_services/front.services";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Router from "next/router";
-import { useDispatch } from "react-redux";
-import { userData } from "../store/actions/index";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { frontService } from '../_services/front.services';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Router from 'next/router';
+import { useDispatch } from 'react-redux';
+import { userData } from '../store/actions/index';
 export default function Login() {
   const dispatch = useDispatch();
   const { pathname } = Router;
@@ -23,56 +23,56 @@ export default function Login() {
     setSending(true);
     frontService.sendOtpcode(data).then(
       (res) => {
-        if (res.status == "success") {
-          localStorage.setItem("phonenumber", data.phone);
+        if (res.status == 'success') {
+          localStorage.setItem('phonenumber', data.phone);
           setMainotp(true);
           reset();
           setDataMb(res.mb);
           toast(res.message, {
-            position: "bottom-center",
+            position: 'bottom-center',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: 'light',
           });
-        } else if (res.status == "fail") {
+        } else if (res.status == 'fail') {
           toast(res.message, {
-            position: "bottom-center",
+            position: 'bottom-center',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: 'light',
           });
         } else {
-          toast("Invalid", {
-            position: "bottom-center",
+          toast('Invalid', {
+            position: 'bottom-center',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: 'light',
           });
         }
         setSending(false);
       },
       (error) => {
-        toast("Invalid", {
-          position: "bottom-center",
+        toast('Invalid', {
+          position: 'bottom-center',
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: 'light',
         });
         setSending(false);
       }
@@ -88,75 +88,75 @@ export default function Login() {
       };
       frontService.sendOtpverify(dat).then(
         (res) => {
-          if (res.status === "success") {
+          if (res.status === 'success') {
             console.log(res.user);
-            localStorage.setItem("gluserDetails", JSON.stringify(res.user));
+            localStorage.setItem('gluserDetails', JSON.stringify(res.user));
             dispatch(userData(res.user));
 
             reset();
             toast(res.message, {
-              position: "bottom-center",
+              position: 'bottom-center',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "light",
+              theme: 'light',
             });
 
-            localStorage.getItem("page")
-              ? Router.push("/checkout")
-              : Router.push("/");
-          } else if (res.status === "fail") {
+            localStorage.getItem('page')
+              ? Router.push('/checkout')
+              : Router.push('/');
+          } else if (res.status === 'fail') {
             toast(res.message, {
-              position: "bottom-center",
+              position: 'bottom-center',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "light",
+              theme: 'light',
             });
           } else {
-            toast("Invalid", {
-              position: "bottom-center",
+            toast('Invalid', {
+              position: 'bottom-center',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "light",
+              theme: 'light',
             });
           }
           setSending(false);
         },
         (error) => {
-          toast("Invalid", {
-            position: "bottom-center",
+          toast('Invalid', {
+            position: 'bottom-center',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: 'light',
           });
           setSending(false);
         }
       );
     } else {
-      toast("Wrong OTP", {
-        position: "bottom-center",
+      toast('Wrong OTP', {
+        position: 'bottom-center',
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: 'light',
       });
     }
     // frontService.sendOtpverify(data)
@@ -225,7 +225,7 @@ export default function Login() {
           <div className="headsecftion">
             <img
               className="imagelogo"
-              src="https://www.glamcode.in/img/fav.png"
+              src="https://admin.glamcode.in/img/fav.png"
               alt="Glamcode"
             />
           </div>
@@ -237,15 +237,15 @@ export default function Login() {
                   placeholder="Otp"
                   defaultValue=""
                   maxLength={4}
-                  {...register("otp", {
-                    required: "Otp is Required",
+                  {...register('otp', {
+                    required: 'Otp is Required',
                   })}
                   onKeyUp={() => {
-                    trigger("otp");
+                    trigger('otp');
                   }}
                 />
                 {errors.otp && (
-                  <span style={{ marginLeft: "58px", color: "red" }}>
+                  <span style={{ marginLeft: '58px', color: 'red' }}>
                     {errors.otp.message}
                   </span>
                 )}
@@ -261,20 +261,20 @@ export default function Login() {
                   maxLength={10}
                   placeholder="Enter the 10 digit mobile"
                   defaultValue=""
-                  {...register("phone", {
-                    required: "Phone is Required",
+                  {...register('phone', {
+                    required: 'Phone is Required',
                     pattern: {
                       value:
                         /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-                      message: "Invalid Phone No",
+                      message: 'Invalid Phone No',
                     },
                   })}
                   onKeyUp={() => {
-                    trigger("phone");
+                    trigger('phone');
                   }}
                 />
                 {errors.phone && (
-                  <span style={{ marginLeft: "58px", color: "red" }}>
+                  <span style={{ marginLeft: '58px', color: 'red' }}>
                     {errors.phone.message}
                   </span>
                 )}

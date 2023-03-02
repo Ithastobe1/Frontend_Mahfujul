@@ -115,10 +115,10 @@ const PreferredPackages = () => {
                 height=""
                 width="100%"
                 alt="Best home salon services in Lucknow"
-                src="https://www.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp" />
+                src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp" />
             </a> */}
               <img
-                src="https://www.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp"
+                src="https://admin.glamcode.in/user-uploads/service/253/12541ee64dc3df644d1a41853b4f4f7c.png.webp"
                 width={238}
                 height={200}
                 style={{

@@ -422,7 +422,7 @@ export default function Categoryslug() {
                           >
                             <img
                               className="images-m center-img-all"
-                              src={`https://www.glamcode.in/user-uploads/maincategory/${item.image}`}
+                              src={`https://admin.glamcode.in/user-uploads/maincategory/${item.image}`}
                               alt={item.name}
                             />
                             <div className="center-content-all">

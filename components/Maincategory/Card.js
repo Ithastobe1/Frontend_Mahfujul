@@ -25,7 +25,7 @@ export default function Card(props) {
             >
               <div className="salonehome-all-Category-images">
                 <img
-                  src={`https://www.glamcode.in/user-uploads/maincategory/${props.image}`}
+                  src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`}
                   alt={props.name}
                 />
               </div>
@@ -44,7 +44,7 @@ export default function Card(props) {
             >
               <div className="salonehome-all-Category-images">
                 <img
-                  src={`https://www.glamcode.in/user-uploads/maincategory/${props.image}`}
+                  src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`}
                   alt={props.name}
                 />
               </div>

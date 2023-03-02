@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 export default function Serving() {
   const router = useRouter();
   const dataloctions = useSelector((state) => state.loctions);
@@ -14,13 +14,13 @@ export default function Serving() {
     locationslug,
     locMinBookingAmount
   ) => {
-    localStorage.setItem("id", locId);
-    localStorage.setItem("cityname", locName);
-    localStorage.setItem("locAddress", locAddress);
-    localStorage.setItem("loc_min_booking_amount", locMinBookingAmount);
+    localStorage.setItem('id', locId);
+    localStorage.setItem('cityname', locName);
+    localStorage.setItem('locAddress', locAddress);
+    localStorage.setItem('loc_min_booking_amount', locMinBookingAmount);
 
-    router.push("/" + locationslug);
-    window.location.href = "/" + locationslug;
+    router.push('/' + locationslug);
+    window.location.href = '/' + locationslug;
     //Router.reload(window.location.pathname)
   };
   return (
@@ -35,9 +35,9 @@ export default function Serving() {
               <div
                 className="d-flex flex-row"
                 style={{
-                  width: "60%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
+                  width: '60%',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                 }}
               >
                 {dataloctions.location?.map((x, i) => {
@@ -58,22 +58,22 @@ export default function Serving() {
                       >
                         <div
                           className="salonehome-all-Category-box"
-                          style={{ backgroundColor: "rgb(255, 255, 255)" }}
+                          style={{ backgroundColor: 'rgb(255, 255, 255)' }}
                         >
                           <div className="salonehome-all-Category-images">
                             {/* <img
-                              src={`https://www.glamcode.in/user-uploads/locations/${x.image}`}
+                              src={`https://admin.glamcode.in/user-uploads/locations/${x.image}`}
                               alt={x.city}
                               style={{ marginTop: 10 }}
                               width={100}
                               height={100}
                             /> */}
-                            <Image
-                              src={`https://www.glamcode.in/user-uploads/locations/${x.image}`}
+                            <img
+                              src={`https://admin.glamcode.in/user-uploads/locations/${x.image}`}
                               width={100}
                               height={100}
                               alt={x.city}
-                              style={{ objectFit: "contain" }}
+                              style={{ objectFit: 'contain' }}
                             />
                           </div>
                         </div>

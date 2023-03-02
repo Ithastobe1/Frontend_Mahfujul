@@ -5,7 +5,7 @@ import Logo from '../../assets/img/Rectangle 999.png';
 const Index = () => {
   return (
     <div className="testimonial ">
-      <Image
+      <img
         src={Logo.src}
         width={1080}
         height={214}
