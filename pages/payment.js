@@ -39,7 +39,7 @@ function Payment() {
   const coupon_min = localStorage.getItem('coupon_min');
 
   const user = JSON.parse(localStorage.getItem('gluserDetails'));
-  console.log(user);
+  //console.log(user);
 
   // console.log(userAddress)
   useEffect(() => {

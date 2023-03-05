@@ -44,7 +44,7 @@ function Checkout() {
       setActive(0);
     }
 
-    console.log(userdetails.address);
+    //console.log(userdetails.address);
 
     if (userdetails.address != null) {
       // localStorage.setItem('pageMyaddress', 'myaddress');
@@ -272,9 +272,8 @@ function Checkout() {
                           }}
                         >
                           <div
-                            className={`d-flex flex-column ${
-                              active === index ? 'active' : ''
-                            }`}
+                            className={`d-flex flex-column ${active === index ? 'active' : ''
+                              }`}
                           >
                             <span className="day">{day}</span>
                             <span className="date">

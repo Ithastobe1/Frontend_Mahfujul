@@ -123,7 +123,7 @@ function Footer() {
     return has;
   };
 
-  console.log(isAmp);
+  //console.log(isAmp);
 
   return (
     <>
@@ -549,8 +549,8 @@ function Footer() {
       </footer>
 
       {router.pathname === '/login' ||
-      router.pathname === '/payment' ||
-      router.pathname === '/checkout' ? (
+        router.pathname === '/payment' ||
+        router.pathname === '/checkout' ? (
         ''
       ) : cart.length > 0 ? (
         <div className="bottomservicesCheckout" key={0}>

@@ -19,7 +19,7 @@ export default function Coupon(props) {
       const apiUrl = 'https://admin.glamcode.in/api/coupons-list';
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data.couponData, 'limonnnnn');
+      //console.log(data.couponData, 'limonnnnn');
       setCouponData(data.couponData);
     };
 
@@ -106,7 +106,7 @@ export default function Coupon(props) {
                         } else {
                           setError(
                             'Minimum amount to avail coupon is ' +
-                              c.minimum_purchase_amount
+                            c.minimum_purchase_amount
                           );
                         }
                       } else {
@@ -151,7 +151,7 @@ export default function Coupon(props) {
                         } else {
                           setError(
                             'Minimum amount to avail coupon is ' +
-                              e.minimum_purchase_amount
+                            e.minimum_purchase_amount
                           );
                         }
                       }}
@@ -168,8 +168,8 @@ export default function Coupon(props) {
             {loading
               ? 'Loading'
               : coupons.length === 0
-              ? 'No Coupon available'
-              : ''}
+                ? 'No Coupon available'
+                : ''}
           </div>
         </Modal.Body>
       </Modal>

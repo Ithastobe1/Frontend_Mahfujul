@@ -1,75 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Container, Row, Col } from 'react-bootstrap';
-import { useRouter } from 'next/router';
+import { useRouter, withRouter } from 'next/router'
 import { useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector } from 'react-redux';
-import LoadingScreen from '../../../components/LoadingScreen/loadingScreen';
-import { frontService } from '../../../_services/front.services';
-import { Audio } from 'react-loader-spinner';
-import Head from 'next/head';
-import clock from '../../../assets/img/clock.png';
-import ViewDetails from '../../../components/ViewDetails/ViewDetails';
-import AddToCart from '../../../components/Cart/AddToCart';
-import { Link } from 'react-scroll';
 
+import clock from '../../../assets/img/clock.png';
+const LoadingScreen = dynamic(() => import('../../../components/LoadingScreen/loadingScreen'));
+//import LoadingScreen from "../../../components/LoadingScreen/loadingScreen";
+import { frontService } from "../../../_services/front.services";
+import { Audio } from 'react-loader-spinner'
+import Head from 'next/head'
+
+const ViewDetails = dynamic(() => import('../../../components/ViewDetails/ViewDetails'));
+//import ViewDetails from '../../../components/ViewDetails/ViewDetails'
+const AddToCart = dynamic(() => import('../../../components/Cart/AddToCart'));
+
+//import AddToCart from '../../../components/Cart/AddToCart';
+import { Link } from 'react-scroll';
+import * as actionTypes from "../../../store/actionTypes";
+import { useDispatch } from 'react-redux';
 export default function Categoryslug() {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const { asPath, pathname } = useRouter();
+
+  const slug = asPath.split('/')[2];
+  const slug1 = asPath.split('/')[3];
+
+  //console.log(slug);
+  //console.log(slug1);
+
+
   const [mainCategory, setMaincategory] = React.useState([]);
   const [categories, setCategories] = React.useState([]);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const datacat = useSelector((state) => state.maincat);
+  const datacat = useSelector(state => state.maincat);
 
   useEffect(() => {
-    frontService.datamancat().then(
-      (res) => {
-        if (res?.status === 'success') {
-          setMaincategory(res.mainCategory);
-          setCategories(res.categories);
-        } else {
+
+    frontService.datamancat(slug, slug1)
+      .then(
+        res => {
+          if (res?.status === 'success') {
+
+            localStorage.setItem("id", res?.location?.id);
+            dispatch({ type: actionTypes.MAIN_LOCATION_ID, payload: res?.location?.id });
+
+            localStorage.setItem("cityname", res?.location?.city);
+            localStorage.setItem("locAddress", res?.location?.name);
+            localStorage.setItem("loc_min_booking_amount", res?.location?.price);
+
+            localStorage.setItem("mid", res?.mainCategory?.id);
+
+            setMaincategory(res.mainCategory);
+            setCategories(res.categories);
+          } else {
+            console.log('Something went wrong !!');
+          }
+        },
+        error => {
           console.log('Something went wrong !!');
         }
-      },
-      (error) => {
-        console.log('Something went wrong !!');
-      }
-    );
-  }, []);
+      )
+  }, [slug, slug1]);
   const mapItems = (items) => {
-    return items.map((item, index) => {
-      return (
-        <li className="listService" key={index}>
-          {/* <i className="fa fa-snowflake-o" aria-hidden="true" /> */}
-          {` ` + item.toString()}
-        </li>
-      );
-    });
-  };
+    return (
+      items.map((item, index) => {
+        return (<li className="listService" key={index}>
+          <i className="fa fa-snowflake-o" aria-hidden="true" />
+          {` ` + item.toString()}</li>);
+      })
+    );
+  }
 
   const callurl = (slug, id) => {
     localStorage.setItem('mid', id);
     //router.push('/category/' + slug + '/' + localStorage.getItem('cityname').toLowerCase())
-  };
+  }
 
-  const [position, setPosition] = useState(window.pageYOffset);
-  const [visible, setVisible] = useState(true);
+
+  const [position, setPosition] = useState(window.pageYOffset)
+  const [visible, setVisible] = useState(true)
   useEffect(() => {
     const handleScroll = () => {
-      let moving = window.pageYOffset;
+      let moving = window.pageYOffset
 
       setVisible(position > moving);
-      setPosition(moving);
+      setPosition(moving)
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
 
-  const cls = visible ? 'visible' : 'hidden';
+
+    window.addEventListener("scroll", handleScroll);
+    return (() => {
+      window.removeEventListener("scroll", handleScroll);
+    })
+  })
+
+  const cls = visible ? "visible" : "hidden";
   return (
     <>
       <Head>

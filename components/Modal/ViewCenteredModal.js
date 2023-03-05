@@ -11,7 +11,7 @@ import AddToCartModalView from '../Cart/AddToCartModalView';
 import tag from '../../assets/img/tag.svg';
 import clock from '../../assets/img/clock.png';
 export default function ViewCenteredModal(props) {
-  console.log(props);
+  //console.log(props);
   const handleClose = () => props.onHide();
   const dispatch = useDispatch();
   const [itemCount, setItemCount] = React.useState(0);
@@ -121,7 +121,7 @@ export default function ViewCenteredModal(props) {
                                             <i className="fa fa-clock-o" />&nbsp;
                                             {props.datato.time} {props.datato.time_type}
                                         </button>
-                                    </div> 
+                                    </div>
                 </div>*/}
               </div>
               <div className="product-details-pro-qty">

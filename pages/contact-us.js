@@ -31,7 +31,7 @@ export default function ContactUs() {
         data.user_email = email
         data.user_phone = phone
         data.user_subject = subject
-        console.log(data)
+        //console.log(data)
         setSending(true)
         frontService.contact(data)
             .then(

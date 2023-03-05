@@ -39,6 +39,9 @@ function Layout({ children }) {
         console.log('Something went wrong !!');
       }
     );
+
+
+
     frontService.maincategory().then(
       (res) => {
         if (res.status === 'success') {
@@ -52,6 +55,8 @@ function Layout({ children }) {
         //toast.error("Something went wrong !!", "Fashion Store");
       }
     );
+
+
     frontService.locationall().then(
       (res) => {
         if (res.status === 'success') {
@@ -65,6 +70,9 @@ function Layout({ children }) {
         //toast.error("Something went wrong !!", "Fashion Store");
       }
     );
+
+
+
   }, []);
 
   return (

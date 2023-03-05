@@ -18,7 +18,6 @@
 //     styledComponents: true,
 //   },
 // };
-<<<<<<< HEAD
 // images: {
 //   remotePatterns: [
 //     {
@@ -29,8 +28,6 @@
 //     },
 //   ],
 // },
-=======
->>>>>>> 57f98a8fdf724e9042a6383176d5b46799e3ea73
 
 module.exports = {
   images: {

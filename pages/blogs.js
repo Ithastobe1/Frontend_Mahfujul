@@ -127,7 +127,7 @@ export default function Blogs() {
                 {items.map((e) => {
                   return (
                     <Link
-                      href={'/blog/' + e.ID}
+                      href={'/blog/' + e.post_name}
                       className="blog-item"
                       key={e.ID}
                     >
@@ -150,7 +150,7 @@ export default function Blogs() {
                         <Link
                           key={e.ID}
                           className="d-flex recent-post"
-                          href={'/blog/' + e.ID}
+                          href={'/blog/' + e.post_name}
                         >
                           <div className="img-box">
                             <img src={e.image_url} />

@@ -6,6 +6,14 @@ export function menuSave(payload) {
     }
 }
 
+export function mainLocationid(payload) {
+    return {
+        type: types.MAIN_LOCATION_ID,
+        payload: payload,
+    }
+}
+
+
 export function userData(payload) {
     return {
         type: types.USERDATA,

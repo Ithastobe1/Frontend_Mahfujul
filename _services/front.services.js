@@ -24,6 +24,7 @@ export const frontService = {
   cancelBooking,
   preferredPack,
   contact,
+  loctionSlug
 };
 async function search(s, location) {
   const requestOptions = {
@@ -63,7 +64,7 @@ async function coupons() {
 
 async function blogDetails(id) {
   const data = {
-    id: id,
+    slug: id,
   };
   const requestOptions = {
     method: 'POST',
@@ -195,15 +196,28 @@ async function sendOtpverify(data) {
     });
 }
 
-async function datamancat() {
+async function datamancat(slug, slug1) {
+  const requestOptions = {
+    method: 'GET',
+
+  };
+  return fetch(Global.BASE_API_PATH + `/serviceslocation/${slug}/${slug1}`, requestOptions)
+    .then(handleResponse)
+    .then(res => {
+      return res;
+    });
+}
+
+
+
+async function maincategory() {
   const requestOptions = {
     method: 'GET',
   };
   return fetch(
     Global.BASE_API_PATH +
-      `/category/${localStorage.getItem('mid')}/${
-        localStorage.getItem('id') || localStorage.getItem('tid')
-      }`,
+    `/maincategory/${localStorage.getItem('id') ? localStorage.getItem('id') : '2'
+    }`,
     requestOptions
   )
     .then(handleResponse)
@@ -212,22 +226,8 @@ async function datamancat() {
     });
 }
 
-async function maincategory() {
-  const requestOptions = {
-    method: 'GET',
-  };
-  return fetch(
-    Global.BASE_API_PATH +
-      `/maincategory/${
-        localStorage.getItem('id') ? localStorage.getItem('id') : '2'
-      }`,
-    requestOptions
-  )
-    .then(handleResponse)
-    .then((res) => {
-      return res;
-    });
-}
+
+
 async function locationall() {
   const requestOptions = {
     method: 'GET',
@@ -238,15 +238,18 @@ async function locationall() {
       return res;
     });
 }
+
+
+
+
 async function knowData() {
   const requestOptions = {
     method: 'GET',
   };
   return fetch(
     Global.BASE_API_PATH +
-      `/knowdata/${
-        localStorage.getItem('id') ? localStorage.getItem('id') : '2'
-      }`,
+    `/knowdata/${localStorage.getItem('id') ? localStorage.getItem('id') : '2'
+    }`,
     requestOptions
   )
     .then(handleResponse)
@@ -254,6 +257,9 @@ async function knowData() {
       return res;
     });
 }
+
+
+
 async function knowDataSlug(slug) {
   const requestOptions = {
     method: 'GET',
@@ -265,13 +271,15 @@ async function knowDataSlug(slug) {
     });
 }
 
+
+
 async function allfaqs() {
   const requestOptions = {
     method: 'GET',
   };
   return fetch(
     Global.BASE_API_PATH +
-      `/faqs/${localStorage.getItem('id') ? localStorage.getItem('id') : '2'}`,
+    `/faqs/${localStorage.getItem('id') ? localStorage.getItem('id') : '2'}`,
     requestOptions
   )
     .then(handleResponse)
@@ -279,6 +287,9 @@ async function allfaqs() {
       return res;
     });
 }
+
+
+
 
 function handleResponse(response) {
   if (response.ok === false) {
@@ -306,6 +317,9 @@ function handleResponse(response) {
     });
   }
 }
+
+
+
 async function myBookings(id) {
   const data = {
     user_id: id,
@@ -368,6 +382,18 @@ async function contact(data) {
   return fetch(Global.BASE_API_PATH + `/contact`, requestOptions)
     .then(handleResponse)
     .then((res) => {
+      return res;
+    });
+}
+
+
+async function loctionSlug(slug) {
+  const requestOptions = {
+    method: 'GET',
+  };
+  return fetch(Global.BASE_API_PATH + `/loctionSlug/${slug}`, requestOptions)
+    .then(handleResponse)
+    .then(res => {
       return res;
     });
 }

@@ -97,7 +97,7 @@ function OtpModal({ show, handleShow, handleClose }) {
       frontService.sendOtpverify(dat).then(
         (res) => {
           if (res.status === 'success') {
-            console.log(res.user);
+            //console.log(res.user);
             localStorage.setItem('gluserDetails', JSON.stringify(res.user));
             dispatch(userData(res.user));
 

@@ -1,6 +1,8 @@
 export const HOME_DATA = "HOME_DATA";
 
 //MAIN_CATEGORY page
+export const MAIN_LOCATION_ID = "MAIN_LOCATION_ID";
+
 export const MAIN_CATEGORY = "MAIN_CATEGORY";
 
 //location

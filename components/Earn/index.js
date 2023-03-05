@@ -10,7 +10,7 @@ const Index = () => {
       const apiUrl = 'https://admin.glamcode.in/api/offers-banners';
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data.offers_banner, 'ddddf');
+      //console.log(data.offers_banner, 'ddddf');
       setBannerData(data.offers_banner);
     };
 

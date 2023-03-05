@@ -100,7 +100,7 @@ export default function Bookings() {
 }
 
 const Item = ({ e, user, getBookings, update = false }) => {
-  console.log(e);
+  //console.log(e);
   const router = useRouter();
   const [sending, setSending] = useState(false);
   const [open, setOpen] = useState(false);

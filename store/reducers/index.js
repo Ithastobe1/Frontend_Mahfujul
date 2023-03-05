@@ -1,5 +1,6 @@
 import HomeReducers from './HomeReducers'
 import mainCatReducers from './mainCatReducers'
+import Mainlocationid from "./Mainlocationid"
 import locationReducers from './locationReducers'
 import userDetails from './UserReducers'
 import cardAdd from './cart'
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     loctions: locationReducers,
     cardAdd: cardAdd,
     userdetails: userDetails,
-    userAddress: userAddress
+    userAddress: userAddress,
+    locationid: Mainlocationid
 });
 
 export default persistReducer(persistConfig, rootReducer);
