@@ -95,7 +95,7 @@ const PreferredPackages = () => {
                       <h5 className="fw-semibold extra-small-text">₹ 1599</h5>
                     </div>
                   </Card.Body>
-                  <Card.Footer className="bg-white py-2 py-md-3 d-md-block d-xl-flex justify-content-around card-footer">
+                  <Card.Footer className="bg-white py-md-3 d-flex justify-content-between justify-content-md-around card-footer">
                     <Button
                       type="button"
                       className="extra-small-text package-btn border-0 me-2 py-1 py-md-2 mb-md-1 mb-xl-0 btn btn-primary"

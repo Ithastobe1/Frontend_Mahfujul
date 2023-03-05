@@ -1,18 +1,32 @@
-import React from "react";
-import Slider from "../components/Slider/homeSlider";
-import Maincategory from "../components/Maincategory/maincategory";
-import Maincategorymobile from "../components/Maincategory/Maincategorymobile";
-import Faqs from "../components/Faqs/index";
-import Serving from "../components/Serving";
-import Knowmore from "../components/Knowmore";
-import Head from "next/head";
-import Header from "../components/Header";
-import PreferredPackages from "../components/PreferredPackages";
-import ReferAndEarn from "../components/ReferAndEarn";
-import CustomerTestimonials from "../components/CustomerTestimonials";
-import Earn from "../components/Earn";
-import OtpModal from "../components/Modal/OtpModal";
+import React, { useEffect, useState } from 'react';
+import Slider from '../components/Slider/homeSlider';
+import Maincategory from '../components/Maincategory/maincategory';
+import Maincategorymobile from '../components/Maincategory/Maincategorymobile';
+import Faqs from '../components/Faqs/index';
+import Serving from '../components/Serving';
+import Knowmore from '../components/Knowmore';
+import Head from 'next/head';
+import Header from '../components/Header';
+import PreferredPackages from '../components/PreferredPackages';
+import ReferAndEarn from '../components/ReferAndEarn';
+import CustomerTestimonials from '../components/CustomerTestimonials';
+import Earn from '../components/Earn';
+import OtpModal from '../components/Modal/OtpModal';
+import Ern from '../assets/img/Rectangle 999.png';
+import Image from 'next/image';
 export default function Home() {
+  const [bannerData, setBannerData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const apiUrl = 'https://admin.glamcode.in/api/offers-banners';
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setBannerData(data.offers_banner);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="background2">
       <>
@@ -89,25 +103,25 @@ export default function Home() {
 
         <Slider />
 
-        {localStorage.getItem("devise") === "D" ? (
+        {localStorage.getItem('devise') === 'D' ? (
           <>
-            <div className="col-12 " style={{ marginTop: "50px" }}>
+            <div className="col-12 " style={{ marginTop: '50px' }}>
               <hr
                 style={{
-                  border: "2px solid rgb(102, 102, 102)",
-                  margin: "10px",
-                  boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px",
-                  backgroundColor: "rgb(255, 255, 255)",
+                  border: '2px solid rgb(102, 102, 102)',
+                  margin: '10px',
+                  boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px',
+                  backgroundColor: 'rgb(255, 255, 255)',
                 }}
               />
             </div>
           </>
         ) : (
           <>
-            <div className="title-content" style={{ marginTop: "32px" }}>
+            <div className="title-content" style={{ marginTop: '32px' }}>
               <h2
                 className="title font-familt-jost"
-                style={{ width: "100%", textAlign: "center" }}
+                style={{ width: '100%', textAlign: 'center' }}
               >
                 Services
               </h2>
@@ -115,51 +129,70 @@ export default function Home() {
           </>
         )}
 
-        {localStorage.getItem("devise") === "D" ? (
+        {localStorage.getItem('devise') === 'D' ? (
           <Maincategory />
         ) : (
           <>
-            {" "}
+            {' '}
             <hr className="hr-white"></hr>
             <Maincategorymobile />
           </>
         )}
 
-        {localStorage.getItem("devise") === "D" ? (
-          <div className="col-12 " style={{ marginTop: "50px" }}>
+        {localStorage.getItem('devise') === 'D' ? (
+          <div className="col-12 " style={{ marginTop: '50px' }}>
             <hr
               style={{
-                border: "2px solid rgb(102, 102, 102)",
-                margin: "10px",
-                boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px",
-                backgroundColor: "rgb(255, 255, 255)",
+                border: '2px solid rgb(102, 102, 102)',
+                margin: '10px',
+                boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px',
+                backgroundColor: 'rgb(255, 255, 255)',
               }}
             />
           </div>
         ) : (
-          ""
+          ''
         )}
         <ReferAndEarn />
         <PreferredPackages />
         <CustomerTestimonials />
-        <Earn />
+        {localStorage.getItem('devise') === 'D' ? (
+          <div className="testimonial ">
+            {bannerData.map((banner) => (
+              <img
+                src={`https://admin.glamcode.in/${banner.image}`}
+                style={{ width: '100%', height: '24rem', objectFit: 'cover' }}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="testimonial2 ">
+            {bannerData.map((banner) => (
+              <img
+                src={`https://admin.glamcode.in/${banner.image}`}
+                style={{ width: '100%', height: '12rem', objectFit: 'cover' }}
+              />
+            ))}
+          </div>
+        )}
+
         <Faqs />
-        {localStorage.getItem("devise") === "D" ? (
-          <div className="col-12 " style={{ marginTop: "50px" }}>
+        {localStorage.getItem('devise') === 'D' ? (
+          <div className="col-12 " style={{ marginTop: '50px' }}>
             <hr
               style={{
-                border: "2px solid rgb(102, 102, 102)",
-                margin: "10px",
-                boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px",
-                backgroundColor: "rgb(255, 255, 255)",
+                border: '2px solid rgb(102, 102, 102)',
+                margin: '10px',
+                boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px',
+                backgroundColor: 'rgb(255, 255, 255)',
               }}
             />
           </div>
         ) : (
-          ""
+          ''
         )}
 
-        {localStorage.getItem("devise") === "D" ? <Serving /> : ""}
+        {localStorage.getItem('devise') === 'D' ? <Serving /> : ''}
 
         <Knowmore />
       </>

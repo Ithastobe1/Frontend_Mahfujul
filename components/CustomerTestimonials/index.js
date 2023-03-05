@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Card2 from './Card2';
 
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
